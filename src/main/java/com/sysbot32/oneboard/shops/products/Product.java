@@ -1,5 +1,6 @@
 package com.sysbot32.oneboard.shops.products;
 
+import com.sysbot32.oneboard.shops.reviews.Review;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -60,4 +61,7 @@ public class Product {
 
     @OneToMany
     private List<ProductItem> items;
+
+    @OneToMany
+    private List<Review> reviews;
 }

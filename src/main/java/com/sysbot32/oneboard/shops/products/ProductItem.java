@@ -1,5 +1,6 @@
 package com.sysbot32.oneboard.shops.products;
 
+import com.sysbot32.oneboard.shops.reviews.Review;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -7,6 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -69,4 +71,7 @@ public class ProductItem {
     /* 재고 */
     @Column(nullable = false)
     private Integer stockQuantity = 0;
+
+    @OneToMany
+    private List<Review> reviews;
 }
