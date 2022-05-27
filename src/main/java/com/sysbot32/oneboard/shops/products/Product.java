@@ -7,6 +7,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -56,4 +57,7 @@ public class Product {
     /* 품절 */
     @Column(nullable = false)
     private Boolean isSoldOut = false;
+
+    @OneToMany
+    private List<ProductItem> items;
 }
