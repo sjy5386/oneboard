@@ -41,6 +41,11 @@ public class Product {
     /* 할인가 */
     private BigDecimal discountedPrice;
 
+    /* 카테고리 */
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private ProductCategory category;
+
     /* 설명 */
     private String description;
 
