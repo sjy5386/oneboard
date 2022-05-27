@@ -44,6 +44,9 @@ public class User {
     /* 생년월일 */
     private LocalDate dateOfBirth;
 
+    /* 성별 */
+    private Gender gender;
+
     /* 전화번호 */
     private String phone;
 
