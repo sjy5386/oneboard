@@ -26,11 +26,16 @@ public class ProductCategory {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
+    /* 이름 */
     @Column(nullable = false)
     private String name;
 
+    /* 상위 카테고리 */
     @ManyToOne
     private ProductCategory parent;
+
+    @OneToMany
+    private List<ProductCategory> children;
 
     @OneToMany
     private List<Product> products;
