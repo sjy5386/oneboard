@@ -16,7 +16,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table
-public class Post {
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,33 +28,22 @@ public class Post {
     private LocalDateTime updatedAt;
 
     @ManyToOne
-    @JoinColumn(name = "board_id")
-    private Board board;
+    @JoinColumn(name = "post_id")
+    private Post post;
+
+    @ManyToOne
+    private Comment parent;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    /* 제목 */
-    @Column(nullable = false)
-    private String title;
-
-    /* 공지글 */
-    @Column(nullable = false)
-    private Boolean isNotice = false;
-
-    /* 비밀글 */
     @Column(nullable = false)
     private Boolean isPrivate = false;
 
-    /* 내용 */
     @Column(nullable = false)
     private String content;
 
-    /* 조회수 */
-    @Column(nullable = false)
-    private Long viewCount = 0L;
-
     @OneToMany
-    private List<Comment> comments;
+    private List<Comment> children;
 }
