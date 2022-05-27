@@ -6,6 +6,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -78,4 +79,7 @@ public class Board {
 
     /* 글 쓰기 기본 내용 */
     private String defaultContent;
+
+    @OneToMany
+    private List<Post> posts;
 }
