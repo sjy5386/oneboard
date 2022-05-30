@@ -81,5 +81,8 @@ public class Board {
     private String defaultContent;
 
     @OneToMany
+    private List<PostCategory> categories;
+
+    @OneToMany
     private List<Post> posts;
 }
